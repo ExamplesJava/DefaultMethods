@@ -2,8 +2,9 @@ package com.lagm;
 
 import com.lagm.interfaz.PersonaA;
 import com.lagm.interfaz.PersonaB;
+import com.lagm.interfaz.PersonaC;
 
-public class DefaultMethod implements PersonaA {
+public class DefaultMethod implements PersonaA, PersonaB, PersonaC {
 
 	public static void main(String[] args) {
 		DefaultMethod app = new DefaultMethod();
@@ -14,5 +15,12 @@ public class DefaultMethod implements PersonaA {
 	@Override
 	public void caminar() {
 		System.out.println("Caminando");
+	}
+
+	@Override
+	public void hablar() {
+		PersonaA.super.hablar();
+		PersonaB.super.hablar();
+		PersonaC.super.hablar();
 	}
 }
